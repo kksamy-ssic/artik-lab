@@ -17,7 +17,12 @@
 var myLEDState = 0;
 
 var Gpio = require('onoff').Gpio,
-    led = new Gpio(135, 'out');
+    led = new Gpio(135, 'out'),
+    led2 = new Gpio(134, 'out'),
+    led3 = new Gpio(129, 'out'),
+    led4 = new Gpio(127, 'out'),
+    led5 = new Gpio(126, 'out'),
+    led6 = new Gpio(125, 'out');
 
 var sleep = require('sleep');
 
@@ -63,11 +68,12 @@ function toggleLED(value) {
 
 console.log(' Starting LAB ---> Blink ARTIK Light Device \n');
 start();
-
-toggleLED(1);
-sleep.sleep(3);
-toggleLED(false);
-
+while(1){
+ toggleLED(1);
+ sleep.sleep(2);
+ toggleLED(false);
+ sleep.sleep(2);
+}
 process.on('SIGINT', exit);
 
 

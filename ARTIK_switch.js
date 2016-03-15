@@ -16,7 +16,14 @@
 
  var Gpio = require('onoff').Gpio,
     button = new Gpio(121, 'in', 'both');
+    gnd = new Gpio(123,'out');
     led = new Gpio(135,'out');
+
+    ledx = new Gpio(134,'out');
+    ledx = new Gpio(129,'out');
+    ledx = new Gpio(127,'out');
+    ledx = new Gpio(126,'out');
+    ledx = new Gpio(125,'out');
  
 var myButtonCount=0;
  var myButtonState=false;
