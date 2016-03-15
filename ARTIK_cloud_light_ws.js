@@ -25,9 +25,13 @@ var WebSocket = require('ws');
 var isWebSocketReady = false;
 var ws = null;
 
-
 var Gpio = require('onoff').Gpio,
-    led = new Gpio(135, 'out');
+    led = new Gpio(135, 'out'),
+    led2 = new Gpio(134, 'out'),
+    led3 = new Gpio(129, 'out'),
+    led4 = new Gpio(127, 'out'),
+    led5 = new Gpio(126, 'out'),
+    led6 = new Gpio(125, 'out');
 
 var sleep = require('sleep');
 

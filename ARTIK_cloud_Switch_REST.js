@@ -30,8 +30,10 @@
 
  var Client = require("node-rest-client").Client;
  var c = new Client();
- var Gpio = require('onoff').Gpio,
+  var Gpio = require('onoff').Gpio,
     button = new Gpio(121, 'in', 'both');
+    gnd = new Gpio(123,'out');
+    
 var myButtonCount=0;
  var myButtonState=false;
 
