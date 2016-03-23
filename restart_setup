@@ -3,5 +3,5 @@ echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 iwconfig
 dhclient wlan0
 ifconfig wlan0
-ping -c 2 ww.google.com
+ping -c 2 www.google.com
 echo "restart Setup Successful"
