@@ -4,5 +4,5 @@ iwconfig
 dhclient wlan0
 ifconfig wlan0
 ifconfig p2p0 down
-ping -c 2 ww.google.com
+ping -c 2 www.google.com
 echo "restart Setup Successful"
