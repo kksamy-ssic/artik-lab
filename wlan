@@ -1,0 +1,40 @@
+#! /bin/bash
+#chkconfig: - 99 10
+
+start()
+{
+/usr/sbin/dhclient wlan0
+ifconfig p2p0 down
+}
+
+stop()
+{
+kill dhclient
+}
+
+restart()
+{
+stop
+start
+}
+
+
+case "$1" in
+  start)
+    start
+    ;;
+  stop)
+    stop
+    ;;
+  restart)
+    restart
+    ;;
+  *)
+    echo "Usage:$0 {start|stop|restart}"
+esac
+
+exit 0
+
+
+
+

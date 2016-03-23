@@ -4,4 +4,4 @@ iwconfig
 dhclient wlan0
 ifconfig wlan0
 ping -c 2 ww.google.com
-echo "onRestart Setup Successful"
+echo "restart Setup Successful"

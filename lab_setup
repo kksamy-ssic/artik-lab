@@ -1,15 +1,21 @@
 echo "Welcome to ARTIK Lab ..... "
-wpa_passphrase "ARTIK" "ARTIK-ACE-123" >> /etc/wpa_supplicant/wpa_supplicant.conf
+#wpa_passphrase "Artik" "Artik123" >> /etc/wpa_supplicant/wpa_supplicant.conf  
+
+cp wlan /etc/init.d/wlan
+chmod a+x /etc/init.d/wlan
+chkconfig --add wlan
+chkconfig --level 12345 wlan on
+
 systemctl restart wpa_supplicant
 
 dhclient wlan0
 ifconfig
 mkdir /root/workspace
-cp * /root/workspace
+
 cd /root/workspace
-chmod 777 onRestart_Setup
-./onRestart_Setup
-#dnf -y update
+chmod 777 restart_setup
+./restart_setup
+dnf -y update
 dnf -y install git
 git clone git://github.com/kksamy-ssic/artik-lab.git
 echo "Installing packages required for node"
@@ -19,6 +25,5 @@ npm install ws;
 npm install onoff;
 npm install sleep;
 npm install node-rest-client;
-
 
 
