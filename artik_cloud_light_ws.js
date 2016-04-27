@@ -18,7 +18,12 @@ var myLEDState = 0;
 
 var webSocketUrl = "wss://api.samsungsami.io/v1.1/websocket?ack=true";
 var cloud_light_id = "c15fae7f2e584eeebb3b0ef6fa917315"; // update the id, every time the device is attached to the user account
-var bearer = "54506706e7d3467190f263ca69b4ae7c"; // Update the bearer information each time you login to the cloud
+var token = "54506706e7d3467190f263ca69b4ae7c"; 
+/**
+The user token is valid as long as the user is logged into the artik cloud account
+The device token is valid as long as the device is attached to the user account
+The session token is valid for 15 min since it is created
+**/
 
 
 var WebSocket = require('ws');
@@ -95,7 +100,7 @@ function toggleLED(value) {
 function register(){
     console.log("Registering device on the WebSocket connection");
     try{
-        var registerMessage = '{"type":"register", "sdid":"'+cloud_light_id+'", "Authorization":"bearer '+bearer+'", "cid":"'+getTimeMillis()+'"}';
+        var registerMessage = '{"type":"register", "sdid":"'+cloud_light_id+'", "Authorization":"bearer '+token+'", "cid":"'+getTimeMillis()+'"}';
         console.log('Sending register message ' + registerMessage + '\n');
         ws.send(registerMessage, {mask: true});
         isWebSocketReady = true;
