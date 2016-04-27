@@ -14,9 +14,18 @@
  * limitations under the License.
  */
  var sami = "https://api.samsungsami.io/v1.1/messages";
- var bearer = "33b5e6833b88476890f410ee02dafb4b";
  var cloud_switch_id = "08027d8460e34a0db81c3268285da1e9";
-
+ var token = "33b5e6833b88476890f410ee02dafb4b";
+/**
+ * USER TOKEN:The token(/bearer) information obtained from calling the self API is the user token
+ * The user token is valid as long as the user is logged into the artik cloud account by default
+ * 
+ * DEVICE TOKEN: The token(/bearer) information obtained from attaching the device to the user account 
+ * is the Device token. It is valid as long as the device is attached to the user account by default
+ * 
+ * APPLICATION TOKEN:
+ * The session token is valid for 15 min since it is created by default
+ **/
 
 // var ddid = "c15fae7f2e584eeebb3b0ef6fa917315";
 /* 
@@ -47,7 +56,7 @@ function exit() {
  	var args = {
  		headers: {
  			"Content-Type": "application/json",
- 			"Authorization": "Bearer "+bearer 
+ 			"Authorization": "Bearer "+token 
  		},  
  		data: { 
      			"sdid": cloud_switch_id,
