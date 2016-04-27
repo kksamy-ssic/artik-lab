@@ -19,11 +19,17 @@ var myLEDState = 0;
 var webSocketUrl = "wss://api.samsungsami.io/v1.1/websocket?ack=true";
 var cloud_light_id = "c15fae7f2e584eeebb3b0ef6fa917315"; // update the id, every time the device is attached to the user account
 var token = "54506706e7d3467190f263ca69b4ae7c"; 
-/**
-The user token is valid as long as the user is logged into the artik cloud account
-The device token is valid as long as the device is attached to the user account
-The session token is valid for 15 min since it is created
-**/
+/** 
+* USER TOKEN:The token(/bearer) information obtained from calling the self API is the user token 
+* The user token is valid as long as the user is logged into the artik cloud account by default 
+*  
+* DEVICE TOKEN: The token(/bearer) information obtained from attaching the device to the user account  
+* is the Device token. It is valid as long as the device is attached to the user account by default 
+*   
+* APPLICATION TOKEN: 
+* The session token is valid for 15 min since it is created by default 
+**/ 
+
 
 
 var WebSocket = require('ws');
