@@ -2,7 +2,7 @@
 This repository contains the sample source files to demostrate Artik cloud access from Artik platform, using node.js 
 
 =============
-The below section explains the steps to access the artik cloud using the 
+The below steps walks through Artik cloud account creation and access the cloud using a REST api and cloud example
 
 1.0)	Create a ARTIK Cloud user account from the user portal, if you already have an ARTIK.IO account then use those credentials to login to https://artik.cloud
 1.1)	Create a user account through get started now
