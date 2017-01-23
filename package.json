@@ -3,7 +3,9 @@
 	"version": "0.0.1",
 	"private": true,
 	"dependencies": {
-		"ws": "1.1.0",
-		"onoff": "1.0.4"
-  }
+		"node-rest-client": "2.0.1",
+		"onoff": "1.1.1",		
+		"sleep": "4.0.0",
+		"ws": "1.1.1"
+  	}
 }
